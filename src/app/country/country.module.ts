@@ -4,6 +4,8 @@ import { ShowCountryComponent } from './pages/show-country/show-country.componen
 import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -22,7 +24,9 @@ import { ByRegionComponent } from './pages/by-region/by-region.component';
     ShowCountryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class CountryModule { }
