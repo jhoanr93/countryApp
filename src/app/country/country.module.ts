@@ -6,6 +6,8 @@ import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CountryTableComponent } from './components/country-table/country-table.component';
+import { InputComponent } from './components/input/input.component';
 
 
 
@@ -15,7 +17,9 @@ import { RouterModule } from '@angular/router';
     ByCountryComponent,
     ByCapitalComponent,
     ByRegionComponent,
-    ShowCountryComponent
+    ShowCountryComponent,
+    CountryTableComponent,
+    InputComponent
   ],
   exports:[
     ByCountryComponent,
