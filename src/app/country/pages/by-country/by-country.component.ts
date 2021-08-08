@@ -32,6 +32,11 @@ export class ByCountryComponent  {
 
   }
 
+  suggest( term: string){
+    this.error = false;
+    
+  }
+
   
 
 }

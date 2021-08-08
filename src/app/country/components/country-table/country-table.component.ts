@@ -9,6 +9,8 @@ import { Country } from '../../interfaces/country.interface';
 export class CountryTableComponent implements OnInit {
 
   @Input() countries: Country [] = [];
+  @Input() capitals: Country[] = [];
+
   constructor() { }
 
   ngOnInit(): void {

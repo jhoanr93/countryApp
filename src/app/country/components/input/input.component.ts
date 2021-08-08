@@ -1,4 +1,6 @@
-import { Component, EventEmitter ,OnInit, Output } from '@angular/core';
+import { Component, EventEmitter ,Input,OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 
 @Component({
@@ -9,6 +11,11 @@ import { Component, EventEmitter ,OnInit, Output } from '@angular/core';
 export class InputComponent implements OnInit {
 
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
+  @Output() onDebounce: EventEmitter<string> = new EventEmitter();
+
+  @Input() placeholder: string = '';
+
+  debouncer: Subject<string> = new Subject();
 
   term: string ='';
 
@@ -16,9 +23,16 @@ export class InputComponent implements OnInit {
     this.onEnter.emit (this.term);
   }
 
+  press( event: any){
+    this.debouncer.next (this.term);
+  }
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.debouncer.pipe(debounceTime(250)).subscribe( value => {
+      this.onDebounce.emit( value );
+    });
   }
 
 }
