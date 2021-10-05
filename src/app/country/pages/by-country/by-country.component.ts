@@ -12,6 +12,8 @@ export class ByCountryComponent  {
   term: string ="Colombia";
   error: boolean = false;
   countries: Country[] = [];
+  suggestCountries: Country[] = [];
+  showSuggest: boolean = false;
 
   
 
@@ -34,7 +36,17 @@ export class ByCountryComponent  {
 
   suggest( term: string){
     this.error = false;
+    this.term = term;
+    this.showSuggest = true;
+
+    this.countryService.searchCountry (term).subscribe( 
+      countries => this.suggestCountries = countries.splice(0,5),
+      (err)=> this.suggestCountries);
     
+  }
+
+  searchSuggest (term: string){
+    this.search(term);
   }
 
   
