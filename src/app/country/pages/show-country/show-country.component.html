@@ -31,7 +31,7 @@
     </div>
   </div>
 
-<h3>Translation</h3>
+<h3 class="mt-3">Translation</h3>
   <div class="row">
       <div class="col">
           <span class="badge bg-primary m-2">{{ country.translations.de}}</span>
@@ -41,5 +41,10 @@
       </div>
   </div>
 
+   
+  <div *ngFor="let video of videos; let i = index">
+        <app-videos *ngIf="hayVideo()" [video]="videos" [posicion]="i"></app-videos>
+        <button onclick="test()">Click aca</button>
+  </div>
   
 </ng-template>

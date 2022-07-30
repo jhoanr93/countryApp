@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { InputComponent } from './components/input/input.component';
+import { VideosComponent } from './pages/videos/videos.component';
 
 
 
@@ -19,7 +20,8 @@ import { InputComponent } from './components/input/input.component';
     ByRegionComponent,
     ShowCountryComponent,
     CountryTableComponent,
-    InputComponent
+    InputComponent,
+    VideosComponent
   ],
   exports:[
     ByCountryComponent,

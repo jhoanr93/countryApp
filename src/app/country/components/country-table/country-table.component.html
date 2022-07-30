@@ -20,7 +20,7 @@
             <td><img class="small-flag" [src]="country.flag" alt=""></td>
             <td>{{ country.capital }}, {{ country.name }}</td>
             <td>{{ country.population | number }}</td>
-            <td><a [routerLink]="['/country', country.alpha2Code]">Watch...</a></td>
+            <td><a [routerLink]="['/country', country.alpha2Code]">More...</a></td>
         </tr>
     </tbody>
 </table>
